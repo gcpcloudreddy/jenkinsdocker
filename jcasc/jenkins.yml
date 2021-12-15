@@ -2,4 +2,28 @@ jenkins:
   systemMessage: |
     <p>Welcome to our Automated Jenkins Automated Jenkinslatform.</p>
     <p>This Jenkins is 100% configured and managed as code.</p>
-  numExecutors: 1  
+  #proxy:
+  #  name: "pkg.proxy.prod.jp.local"
+  #  port: 10080
+  slaveAgentPort: 50000
+  numExecutors: 1
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+      - id: admin
+        password: ${adminpw:-passw0rd}
+  authorizationStrategy:
+    globalMatrix:
+      grantedPermissions:
+        - "Overall/Read:anonymous"
+        - "Job/Read:anonymous"
+        - "View/Read:anonymous"
+        - "Overall/Administer:anonymous"
+
+  crumbIssuer: "standard"
+
+  remotingSecurity:
+    enabled: true    
+
+
