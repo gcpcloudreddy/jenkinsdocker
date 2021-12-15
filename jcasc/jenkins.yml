@@ -1,0 +1,4 @@
+jenkins:
+  systemMessage: |
+    <p>Welcome to our Automated Jenkins PAutomated Jenkinslatform.</p>
+    <p>This Jenkins is 100% configured and managed as code.</p>
