@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/base:current
+      - image: dockerhub.paypalcorp.com/docker-local/decisionengineservice:latest
     resource_class: test-circleci/test-circleci
     steps:
       - run: echo "Hi I'm on a Container Runner!"
