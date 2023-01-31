@@ -3,7 +3,7 @@ version: 2.1
 jobs:
  build:
    machine:
-    image: ubuntu-2204:2022.04.2
+    image: dockerhub.paypalcorp.com/docker-local/decisionengineservice:latest
    steps:
      - checkout
      # start proprietary DB using private Docker image
