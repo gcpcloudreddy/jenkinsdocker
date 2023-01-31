@@ -18,9 +18,19 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
 
+jobs:
+  build:
+    docker:
+      - image: cimg/base:current
+    resource_class: test-circleci/test-circleci
+    steps:
+      - run: echo "Hi I'm on a Container Runner!"
+       
+
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   say-hello-workflow:
     jobs:
       - say-hello
+      - build
