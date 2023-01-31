@@ -10,4 +10,4 @@ jobs:
     steps:
       - run: echo "Hi I'm on Runners!"
       - run: docker ps
-      - run docker pull dockerhub.paypalcorp.com/sekharscans/oss:9114dd2
+      - run: docker pull dockerhub.paypalcorp.com/sekharscans/oss:9114dd2
