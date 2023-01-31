@@ -1,19 +1,12 @@
 version: 2.1
-
 jobs:
- build:
-   machine:
-    image: dockerhub.paypalcorp.com/docker-local/decisionengineservice:latest
-   steps:
-     - checkout
-     # start proprietary DB using private Docker image
-     # with credentials stored in the UI
-     - run: |
-         echo "Hello"
-         docker pull dockerhub.paypalcorp.com/docker-local/decisionengineservice:latest
-
-     # build the application image
-     #- run: docker build -t company/app:$CIRCLE_BRANCH .
-
-     # deploy the image
-     #- run: docker push company/app:$CIRCLE_BRANCH
+  build:
+    docker:
+      - image: cimg/base:current
+    resource_class: test-circleci/test-circleci
+    steps:
+      - run: echo "Hi I'm on a Container Runner!"
+workflows:
+  build-workflow:
+    jobs:
+      - build
