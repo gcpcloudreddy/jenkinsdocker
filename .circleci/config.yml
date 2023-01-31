@@ -1,13 +1,15 @@
-version: 2.1
 jobs:
-  my-job:
-    machine: true
-    resource_class: medium
-    image: dockerhub.paypalcorp.com/docker-local/decisionengineservice:latest
-   steps:
-     - checkout
-     # start proprietary DB using private Docker image
-     # with credentials stored in the UI
-     - run: |
-         echo "Hello"
-         docker pull dockerhub.paypalcorp.com/docker-local/decisionengineservice:latest
+  build: # name of your job
+    machine: true # executor type
+    steps:
+      # Commands run in a Linux virtual machine environment
+      - run: |
+         echo "Hi I'm on a Container Runner!"
+         hostname
+         date
+         ls -l
+
+workflows:
+  build-workflow:
+    jobs:
+      - build
