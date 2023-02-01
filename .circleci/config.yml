@@ -11,3 +11,4 @@ jobs:
       - run: echo "Hi I'm on Runners!"
       - run: docker ps
       - run: cat /tmp/checksums.txt
+      - run: cd /opt/scancli/fopnodeweb; python3.8 /opt/scancli/ScanCLI/cli/main.py -t oss
